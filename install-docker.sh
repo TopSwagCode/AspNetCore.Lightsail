@@ -24,8 +24,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 # copy the dockerfile into /srv/docker 
 # if you change this, change the systemd service file to match
 # WorkingDirectory=[whatever you have below]
-mkdir /srv/docker
-curl -o /srv/docker/release.zip -LJO https://github.com/TopSwagCode/lightsail.aspnetcore/archive/master.zip
+sudo mkdir /srv/docker
+sudo curl -o /srv/docker/release.zip -LJO https://github.com/TopSwagCode/lightsail.aspnetcore/archive/master.zip
 cd /srv/docker
 # Unzip and move files into current folder
 sudo apt-get update
