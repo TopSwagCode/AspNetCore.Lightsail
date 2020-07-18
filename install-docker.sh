@@ -15,11 +15,14 @@ chmod +x /usr/local/bin/docker-compose
 # WorkingDirectory=[whatever you have below]
 mkdir /srv/docker
 curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/mikegcoleman/todo/master/docker-compose.yml
+cd /srv/docker
+# Unzip and move files into current folder
+unzip -l release.zip
+mv lightsail.aspnetcore-master/* .
 
-# copy in systemd unit file and register it so our compose file runs 
-# on system restart
+## !!!!! TODO !!!!! Move docker-compose-app.service file to  /etc/systemd/system/ folder!
 curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/mikegcoleman/todo/master/docker-compose-app.service
 systemctl enable docker-compose-app
 
-# start up the application via docker-compose
-docker-compose -f /srv/docker/docker-compose.yml up -d
+# start up the application via docker-compose. !!!! TODO !!!!! Use build. To ensure we always get latests version!.
+docker-compose -f docker-compose.yml up -d
