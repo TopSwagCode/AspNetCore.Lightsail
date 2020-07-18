@@ -1,9 +1,4 @@
 #!/bin/bash
-# Download Startup install service script
-curl -o ./lightsail.sh https://github.com/TopSwagCode/lightsail.aspnetcore/blob/master/install-docker.sh
-
-# Make it runable
+curl -o ./lightsail.sh https://github.com/TopSwagCode/lightsail.aspnetcore/blob/master/install-docker.sh | sh
 chmod +x ./lightsail.sh 
-
-# Run it
 ./lightsail.sh
