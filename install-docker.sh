@@ -21,8 +21,8 @@ unzip -l release.zip
 mv lightsail.aspnetcore-master/* .
 
 ## !!!!! TODO !!!!! Move docker-compose-app.service file to  /etc/systemd/system/ folder!
-curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/mikegcoleman/todo/master/docker-compose-app.service
-systemctl enable docker-compose-app
+#curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/mikegcoleman/todo/master/docker-compose-app.service
+#systemctl enable docker-compose-app
 
 # start up the application via docker-compose. !!!! TODO !!!!! Use build. To ensure we always get latests version!.
 docker-compose -f docker-compose.yml up -d
