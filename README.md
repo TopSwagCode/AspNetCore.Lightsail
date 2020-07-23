@@ -43,7 +43,7 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "pulldog.aspnetcore.dll"]
+ENTRYPOINT ["dotnet", "lightsail.aspnetcore.dll"]
 ```
 
 With the dockerfile in place, we can now focus on creating a docker-compose.yml file. Again I used docs from docker own homepage to build it. I am sharing an advanced docker-compose.yml file which also shows how you could start a MsSQL database with your project. You can find it here: https://docs.docker.com/compose/aspnet-mssql-compose/
