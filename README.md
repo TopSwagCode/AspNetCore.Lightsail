@@ -56,7 +56,7 @@ services:
     web:
         build: .
         ports:
-            - "5000:80"
+            - "80:80"
 ```
 
 To test it all out try and run the project using the docker-compose.yml file.
